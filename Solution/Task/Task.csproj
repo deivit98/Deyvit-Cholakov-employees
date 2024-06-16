@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\LibraryHelper\TaskHelper.csproj" />
+    <ProjectReference Include="..\LibraryHelper\TaskHelper.csproj" />
   </ItemGroup>
 
 </Project>
