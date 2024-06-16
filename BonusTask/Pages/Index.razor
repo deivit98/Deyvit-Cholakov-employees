@@ -1,0 +1,64 @@
+﻿@page "/"
+@using System.Globalization
+@using System.IO
+@inject IJSRuntime JSRuntime
+@using BonusTask.ResponseDtos
+@using LibraryHelper
+@using LibraryHelper.Models
+@using Microsoft.AspNetCore.Components.Forms
+
+<h3>Upload CSV File</h3>
+
+<InputFile OnChange="HandleFileUpload" />
+
+@if (projectRecords != null && projectRecords.Any())
+{
+    <h3>Common Projects</h3>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Employee ID #1</th>
+                    <th>Employee ID #2</th>
+                    <th>Project ID</th>
+                    <th>Days Worked</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in projectRecords)
+                {
+                    <tr>
+                        <td>@record.EmployeeID1</td>
+                        <td>@record.EmployeeID2</td>
+                        <td>@record.ProjectID</td>
+                        <td>@record.DaysWorked</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    List<FileInputResponseDto> projectRecords = new();
+
+    private void HandleFileUpload(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+
+        using (var stream = file.OpenReadStream())
+        using (var reader = new StreamReader(stream))
+        {
+            var items = CvsParser.ReadDataFromFileUpload(reader);
+            var pairs = HighestPairFinder.GetHighestPair(items, true);
+
+            foreach (var pair in pairs)
+            {
+                var currPair = pair as FileInputResponseDto;
+
+                projectRecords.Add(currPair);
+            }
+        }
+    }
+}
