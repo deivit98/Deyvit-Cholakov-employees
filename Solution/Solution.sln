@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskHelper", "..\LibraryHel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BonusTask", "..\BonusTask\BonusTask.csproj", "{077808E2-FDD4-4606-ADC4-7048AF914286}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task", "Task\Task.csproj", "{F17502B9-0C8D-4A86-9A19-568D69A077DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{077808E2-FDD4-4606-ADC4-7048AF914286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{077808E2-FDD4-4606-ADC4-7048AF914286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{077808E2-FDD4-4606-ADC4-7048AF914286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17502B9-0C8D-4A86-9A19-568D69A077DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17502B9-0C8D-4A86-9A19-568D69A077DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17502B9-0C8D-4A86-9A19-568D69A077DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17502B9-0C8D-4A86-9A19-568D69A077DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
